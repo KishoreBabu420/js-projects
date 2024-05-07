@@ -24,6 +24,108 @@
     />
   </head>
   <body>
+    <main class="main">
+      <!-- title -->
+      <h1 class="main-heading">Book you movie tickets</h1>
+
+      <!-- legend -->
+      <div class="legend">
+        <div class="legend-seat-container">
+          <span>Available</span>
+          <div class="seat"></div>
+        </div>
+
+        <div class="legend-seat-container">
+          <span>Selected</span>
+          <div class="seat selected"></div>
+        </div>
+
+        <div class="legend-seat-container">
+          <span>Occupied</span>
+          <div class="seat occupied"></div>
+        </div>
+      </div>
+
+      <!-- Movies -->
+      <div class="movies-container">
+        <label for="movie">Select a Movie</label>
+        <select
+          name="movie"
+          id="movie"
+          class="movie"
+        >
+          <option value="100">The Shawshank Redemption - ₹100</option>
+          <option value="200">The Godfather - ₹200</option>
+          <option value="300">The Dark Knight - ₹300</option>
+          <option value="400">The Godfather: Part II - ₹400</option>
+          <option value="500">12 Angry Men - ₹500</option>
+        </select>
+      </div>
+
+      <!-- screen -->
+      <div class="screen-container">
+        <div class="screen"></div>
+
+        <div class="seats-container">
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- summary -->
+      <p class="summary">
+        You have selected
+        <span
+          class="seat-count"
+          id="seat-count"
+          >6</span
+        >
+        Seats and a total of ₹<span
+          class="amount"
+          id="amount"
+          >200</span
+        >
+      </p>
+    </main>
     <!-- custom script -->
     <script src="./scripts/script.js"></script>
   </body>
