@@ -24,6 +24,50 @@
     />
   </head>
   <body>
+    <div class="header-container">
+      <h1>Rock Paper Scissors</h1>
+      <div class="scores-container">
+        <p id="user-score"></span></p>
+        <p id="comp-score"></span></p>
+      </div>
+    </div>
+    <div class="weapons-container">
+      <button
+        class="btn-weapon btn-rock"
+        onclick="check('rock')"
+      >
+        Rock
+      </button>
+      <button
+        class="btn-weapon btn-paper"
+        onclick="check('paper')"
+      >
+        Paper
+      </button>
+      <button
+        class="btn-weapon btn-scissor"
+        onclick="check('scissors')"
+      >
+        Scissors
+      </button>
+    </div>
+
+    <div class="result-container">
+      <p
+        class="user-choice"
+        id="user-choice"
+      ></p>
+      <p
+        class="computer-choice"
+        id="comp-choice"
+      ></p>
+      <p
+        class="result"
+        id="result"
+      ></p>
+
+      <button class="btn btn-reset" id="btn-reset">Reset</button>
+    </div>
     <!-- custom script -->
     <script src="./scripts/script.js"></script>
   </body>
