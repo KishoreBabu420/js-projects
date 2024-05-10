@@ -3,6 +3,7 @@
 const userChoiceEl = document.getElementById('user-choice');
 const compChoiceEl = document.getElementById('comp-choice');
 const resultEl = document.getElementById('result');
+const resultContainer = document.querySelector('.result-container');
 const userScoreEl = document.getElementById('user-score');
 const compScoreEl = document.getElementById('comp-score');
 
@@ -18,9 +19,10 @@ let compScore;
 function init() {
   userScore = 0;
   compScore = 0;
-  userScoreEl.innerText = `User Score: ${userScore}`;
-  compScoreEl.innerText = `Computer Score: ${compScore}`;
+  userScoreEl.innerText = `${userScore}`;
+  compScoreEl.innerText = `${compScore}`;
 
+  resultContainer.style.display = 'none';
   btnReset.style.display = 'none';
 }
 
@@ -58,30 +60,33 @@ function compareChoice(userChoice, compChoice) {
 function displayResult(gameResult) {
   if (gameResult === 'won') {
     userScore++;
-    userScoreEl.innerText = `User Score: ${userScore}`;
-    compScoreEl.innerText = `Computer Score: ${compScore}`;
     resultEl.innerText = `User Won`;
+    resultEl.style.backgroundColor = '#386641';
   } else if (gameResult === 'lost') {
     compScore++;
-    userScoreEl.innerText = `User Score: ${userScore}`;
-    compScoreEl.innerText = `Computer Score: ${compScore}`;
     resultEl.innerText = `User Lost`;
+    resultEl.style.backgroundColor = '#ff0054';
   } else if (gameResult === 'draw') {
-    userScoreEl.innerText = `User Score: ${userScore}`;
-    compScoreEl.innerText = `Computer Score: ${compScore}`;
     resultEl.innerText = `Game DRAW`;
+    resultEl.style.backgroundColor = '#8d99ae';
   }
+  userScoreEl.innerText = `${userScore}`;
+  compScoreEl.innerText = `${compScore}`;
 }
 
 function check(weapon) {
-  if (userScore > 10 || compScore > 10) {
+  if (userScore >= 5 || compScore >= 5) {
+    userChoiceEl.innerText = null;
+    compChoiceEl.innerText = null;
+    resultEl.innerText = 'Game Over';
     btnReset.style.display = 'inline';
   } else {
+    resultContainer.style.display = 'flex';
     const userChoice = weapon;
     const compChoice = weapons[generateRandomNumber(weapons.length)];
 
-    userChoiceEl.innerText = `User Choose ${userChoice}`;
-    compChoiceEl.innerText = `Computer Choose ${compChoice}`;
+    userChoiceEl.innerHTML = `User Choose <span class="weapon">${userChoice}</span>`;
+    compChoiceEl.innerHTML = `Computer Choose <span class="weapon">${compChoice}</span>`;
 
     displayResult(compareChoice(userChoice, compChoice));
   }
