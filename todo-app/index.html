@@ -32,6 +32,34 @@
     />
   </head>
   <body>
+    <main class="main">
+      <div class="card">
+        <h1 class="card-heading">Add Your Todo list</h1>
+        <form
+          class="todo-form"
+          id="todo-form"
+        >
+          <input
+            type="text"
+            name="title"
+            id="todo-title"
+            placeholder="Add your todo title"
+            class="user-input"
+          />
+          <button
+            class="btn btn-submit"
+            id="btn-submit"
+            type="submit"
+          >
+            Add
+          </button>
+        </form>
+        <ul
+          class="todo-list-container"
+          id="todo-list-container"
+        ></ul>
+      </div>
+    </main>
     <!-- custom script -->
     <script src="./scripts/script.js"></script>
   </body>
